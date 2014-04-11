@@ -3,7 +3,7 @@ package main
 import (
 	"./app/controllers"
 	"./app/db"
-	". /app/models"
+	"./app/models"
 	"github.com/go-martini/martini"
 	"github.com/martini-contrib/binding"
 	"github.com/martini-contrib/render"
@@ -13,6 +13,8 @@ func main() {
 	m := martini.Classic()
 
 	m.Use(render.Renderer())
+
+  m.Use(martini.Static("app/public"))
 
 	m.Use(db.DB())
 

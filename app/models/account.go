@@ -1,8 +1,8 @@
 package models
 
 type Account struct {
-	Id             string `form:"id" json:"id"`
-	Name           string `form:"name" json:"name" binding:"required"`
-	CreationUserId string `form:"creationUserId" json:"creationUserId" binding:"required"`
-	CreationDate   string `form:"creationDate" json:"creationDate" binding:"required"`
+	Id             string `json:"id,omitempty"`
+	Name           string `json:"name" binding:"required"`
+	CreationUserId string `json:"creationUserId" binding:"required"`
+	CreationDate   string `json:"creationDate" binding:"required"`
 }

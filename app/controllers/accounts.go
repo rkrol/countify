@@ -31,7 +31,9 @@ func (c AccountsController) GetAccount(params martini.Params, render render.Rend
 
 func (c AccountsController) CreateAccount(account models.Account, render render.Render, session *rethinkgo.Session) {
 	log.Println("account", account)
-	rethinkgo.Table("accounts").Insert(account).Run(session)
+	err := rethinkgo.Table("accounts").Insert(account).Run(session).Err()
+	if err != nil {
+		panic(err)
+	}
 	c.GetAccounts(render, session)
-	//render.JSON(200, "ok")
 }

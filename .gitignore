@@ -1,0 +1,6 @@
+node_modules
+dist
+.tmp
+app/public/bower_components
+rethinkdb_data
+countify

@@ -1,0 +1,23 @@
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ng-href="#">Home</a></li>
+    <li><a ng-href="#">About</a></li>
+    <li><a ng-href="#">Contact</a></li>
+  </ul>
+  <h3 class="text-muted">Countify</h3>
+</div>
+
+<div class="jumbotron">
+  <h2>Account creation</h2>
+
+  <form name="accountForm">
+    name: <input name="input" ng-model="newAccountName" required>
+    <span class="error" ng-show="accountForm.input.$error.required">Required!</span><br>
+    <a class="btn btn-primary" role="button" ng-click="newAccount()">Save</a>
+  </form>
+
+</div>
+
+<div class="footer">
+  <p><span class="glyphicon glyphicon-heart"></span> from the Fasterize team</p>
+</div>
